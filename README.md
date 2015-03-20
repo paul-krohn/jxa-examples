@@ -8,6 +8,6 @@ Installation
 
 First, you need to enable the AppleScript menu, which is achieved in the General section of the Script Editor preferences.
 
-Then clone this repo and link, alias or move the desired scripts to your "User Scripts" folder at `~/Library/Scripts`. You'll probably need to change the  mailbox name at the start of the script, as described in the comments.
+Then clone this repo and link, open a script in Script Editor, and then Export it to to your "User Scripts" folder at `~/Library/Scripts`. You'll probably need to change the  mailbox name at the start of the script, as described in the comments.
 
 Finally, select some mail you would like to delete, and then pick the script from the AppleScript menu.
