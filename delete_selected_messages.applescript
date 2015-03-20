@@ -32,13 +32,16 @@ while (remainingMessageCount > 0) {
 	// the index of the last item is N-1
 	console.log("deleting message " + theMessages[remainingMessageCount-1].subject());
 	
+	// mark the message as read, so you don't have a badge/number on your trash
+	theMessages[remainingMessageCount-1].readStatus = true;
 	// Move the message to the trash mailbox defined above.
 	// We should probably detect errors (and bail out) here,
 	// rather than just carry on fearlessly. Also, this is a blocking operation.
-	// A good optimization might be to delete ranges of messages
-	// at a time, so it goes faster when you have a LOT of messages to delete.
+	// I tried to optimize by deleting ranges of messages
+	// at a time, using the JavaScript slice method on the array of
+	// messages, but that doesn't work. It looks like it succeeds
+	// in randomly deleting just one of the messages in the slice.
 	theMessages[remainingMessageCount-1].mailbox = trashMailBox;
-	
 	// Update the progress indicator.
 	Progress.completedUnitCount = (originalMessageCount - remainingMessageCount);
 	
